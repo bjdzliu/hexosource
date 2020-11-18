@@ -24,6 +24,7 @@ after_script:
   - cd ../
   - mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
   - cd ./public
+  - echo "bjdzliu.com" > CNAME
   - git config --global user.name "bjdzliu"  #修改name
   - git config --global user.email "dezhaoliu@gmail.com"  #修改email
   - git add .
