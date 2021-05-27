@@ -161,10 +161,15 @@ tcp的缓冲区值，受限于这里的max
 cat /proc/sys/net/ipv4/tcp_timestamps
 1
 ```
-如果是NAT的场景，不要使用这个值。原因是：如果clientB也是通过lvs服务器访问到server1，那么因为之前clientA已经访问到server1，并且lvs配置了tcp_tw_recycle=1；tcp_timestamps=1；那么lvs作为 “源ip：源port” 如果重复，就会被server1抛弃。显现是有syn，没有ack。
+如果是NAT的场景，不要使用这个值。原因是：  
+clientA和clientB都通过lvs访问server1；  
+time-a: clientA已经访问到server1;  
+time-b: clientB也是通过lvs服务器访问到server1  
+lvs的配置：tcp_tw_recycle=1&tcp_timestamps=1  
+server1: 如果遇到 “源ip：源port” 一样并请求第二次，第二次的时间戳晚，抛弃第二次连接  
 
 
-tcp_tw_recycle 再kernel 4.x版本后已经废弃；  
+tcp_tw_recycle 在kernel 4.x版本后已经废弃；  
 tcp_tw_recycle 表明尽快的回收处于 time_wait 状态的连接，不用等两个 MSL 就关闭连接。
                缺点是：会拒绝所有比这个客户端时间戳更靠前的网络包。在开启
 
