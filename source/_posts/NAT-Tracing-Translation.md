@@ -1,5 +1,5 @@
 ---
-title: NAT-Tracing(Translation)
+title: NAT-Tracing-part1(Translation)
 date: 2021-06-12 21:50:46
 tags:
 - k8s
@@ -154,7 +154,7 @@ trace id 不同，但是 packet 具有相同的内容。这是一次重传尝试
 
 
 ###  规则调查
-前面的部分发现 packet 被丢弃在 inet filter表 中一个名为 “allowed_dnats” 的链中。我们看一下：
+前面的部分发现 packet 被丢弃在 inet filter 表中一个名为 “allowed_dnats” 的链中。我们看一下：
 
 ```
 # nft list chain inet filter allowed_dnats
@@ -211,4 +211,5 @@ trace id 497abf58 ip postrouting packet: iif "enp0" oif "veth21" ether .. trace 
 
 ### 总结
 本文介绍了如何使用 nftables 跟踪机制检查数据包丢失和其他连接性问题的来源。
-这是翻译的第一篇。作者还有后续第二篇。
+这是翻译的第一篇。作者还有后续第二篇。  
+[原文](https://fedoramagazine.org/network-address-translation-part-1-packet-tracing/)
