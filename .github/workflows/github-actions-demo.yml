@@ -34,7 +34,7 @@ jobs:
         run: |
           ls && \
           pwd && \
-          ls -l /home/runner/work/hexosource/hexosource && \
+          ls -l /home/runner/work/hexosource/hexosource/public && \
           exit 1
 
       - name: Checkout Another Repository
