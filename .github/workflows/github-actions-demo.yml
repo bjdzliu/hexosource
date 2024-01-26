@@ -41,7 +41,13 @@ jobs:
       - name: Check Content
         run: |
           ls -l  /home/runner/work/hexosource/hexosource/static_dir && \
-          ls -l /home/runner/work/hexosource/hexosource/
+          ls -l /home/runner/work/hexosource/hexosource/ 
+          
+      - name: Check Token
+        run: |
+          echo ${{ secrets.PAT_TOKEN }} > huhu.txt  && \
+          cat  huhu.txt && \
+          ls -l /home/runner/work/hexosource/hexosource/ 
            
 
       - name: Copy Hexo Output to Another Repository
