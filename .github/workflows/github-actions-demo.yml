@@ -50,12 +50,16 @@ jobs:
           pwd && \
           cp -r /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
 
+      - name: Copy Hexo Output to Another Repository
+        run: |
+          echo ${{ secrets.ACCESSTOKEN }}
+          
       - name: Commit and Push Changes
         run: |
           cd static_dir
           git config --global user.email "dezhaoliu@gmail.com"
           git config --global user.name "bjdzliu"
           git add .
-          git commit -m "Update Hexo content"
-          git push
+          git commit -m "Update Hexo content" 
+          git push https://bjdzliu:${{ secrets.ACCESSTOKEN }}@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
 
