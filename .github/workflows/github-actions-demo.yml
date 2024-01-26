@@ -1,4 +1,5 @@
 name: Publish Hexo Source
+permissions: write-all
 
 on:
   push:
@@ -8,9 +9,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment:
-      name: push_bjdzliu  # 替换设置的 Environment 的名称 在hexosource/settings/secrets/actions路径
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
