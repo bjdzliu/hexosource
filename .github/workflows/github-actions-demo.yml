@@ -33,7 +33,7 @@ jobs:
 
       - name: Hexo Clean and Generate
         run: |
-          ls \
+          ls && \
           pwd
 
       - name: Checkout Another Repository
