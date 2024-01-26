@@ -33,9 +33,7 @@ jobs:
           
       - name: Hexo Clean and Generate
         run: |
-          ls -l /home/runner/work/hexosource/hexosource/public && \
-          mkdir static_repo && \
-          cd static_repo
+          ls -l /home/runner/work/hexosource/hexosource/public
           
 
       - name: Checkout Another Repository
@@ -43,11 +41,12 @@ jobs:
         with:
            repository: bjdzliu/bjdzliu.github.io  # 替换为目标仓库的用户名和仓库名
            ref: master
+           path: static_dir
 
       - name: Copy Hexo Output to Another Repository
         run: |
           pwd && \
-          cp -r /home/runner/work/hexosource/hexosource/public/* ./  # 替换为目标仓库中存放静态文件的目录
+          cp -r /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
 
       - name: Commit and Push Changes
         run: |
