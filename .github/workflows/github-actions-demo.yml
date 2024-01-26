@@ -50,7 +50,6 @@ jobs:
       - name: Copy Hexo Output to Another Repository
         run: |
           pwd && \
-          pwd && \
           echo ${{ secrets.ACCESSTOKEN }} && \
           cp -r /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
         
