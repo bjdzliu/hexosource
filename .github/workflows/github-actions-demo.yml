@@ -30,12 +30,10 @@ jobs:
         run: |
           npx hexo clean && \
           npx hexo generate
+          
       - name: Hexo Clean and Generate
         run: |
-          ls && \
-          pwd && \
-          ls -l /home/runner/work/hexosource/hexosource/public && \
-          exit 1
+          ls -l /home/runner/work/hexosource/hexosource/public 
 
       - name: Checkout Another Repository
         uses: actions/checkout@v2
