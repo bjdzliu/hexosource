@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment:
+      name: push_bjdzliu  # 替换设置的 Environment 的名称 在hexosource/settings/secrets/actions路径
 
     steps:
       - name: Checkout Repository
@@ -58,5 +60,5 @@ jobs:
           git config --global user.name "bjdzliu"
           git add .
           git commit -m "Update Hexo content " 
-          git push https://github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
+          git push https://bjdzliu:${{ secrets.ACCESSTOKEN }}@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
 
