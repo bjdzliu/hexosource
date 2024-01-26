@@ -42,6 +42,12 @@ jobs:
            repository: bjdzliu/bjdzliu.github.io  # 替换为目标仓库的用户名和仓库名
            ref: master
            path: static_dir
+           
+      - name: Hexo Clean and Generate
+        run: |
+          ls -l  /home/runner/work/ && \
+          exit 1
+           
 
       - name: Copy Hexo Output to Another Repository
         run: |
