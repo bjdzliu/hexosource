@@ -31,8 +31,6 @@ jobs:
           npx hexo clean && \
           npx hexo generate
         
-          
-
       - name: Checkout Another Repository
         uses: actions/checkout@v2
         with:
@@ -41,11 +39,10 @@ jobs:
            path: static_dir
            clean: false
            
-      - name: Hexo Clean and Generate
+      - name: Check Content
         run: |
           ls -l  /home/runner/work/hexosource/hexosource/static_dir && \
           ls -l /home/runner/work/hexosource/hexosource/ && \
-          exit 1
            
 
       - name: Copy Hexo Output to Another Repository
@@ -55,6 +52,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
+          cd static_dir
           git config --global user.email "dezhaoliu@gmail.com"
           git config --global user.name "bjdzliu"
           git add .
