@@ -37,18 +37,9 @@ jobs:
            ref: master
            path: static_dir
            clean: false
+           token: ${{ secrets.PAT_TOKEN }}
            
-      - name: Check Content
-        run: |
-          ls -l  /home/runner/work/hexosource/hexosource/static_dir && \
-          ls -l /home/runner/work/hexosource/hexosource/ 
-          
-      - name: Check Token
-        run: |
-          echo ${{ secrets.PAT_TOKEN }} > huhu.txt  && \
-          cat  huhu.txt|grep Zgm && \
-          ls -l /home/runner/work/hexosource/hexosource/ 
-           
+                   
 
       - name: Copy Hexo Output to Another Repository
         run: |
@@ -57,6 +48,7 @@ jobs:
           cp -r /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
         
       - name: Commit and Push Changes
+      
         run: |
           cd static_dir
           git config --global user.email "dezhaoliu@gmail.com"
