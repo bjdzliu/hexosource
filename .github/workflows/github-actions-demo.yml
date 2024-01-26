@@ -34,7 +34,8 @@ jobs:
       - name: Hexo Clean and Generate
         run: |
           ls && \
-          pwd
+          pwd && \
+          ls -l /home/runner/work/hexosource/hexosource
 
       - name: Checkout Another Repository
         uses: actions/checkout@v2
