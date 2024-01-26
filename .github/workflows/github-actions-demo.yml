@@ -3,7 +3,7 @@ name: Publish Hexo Source
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   publish:
