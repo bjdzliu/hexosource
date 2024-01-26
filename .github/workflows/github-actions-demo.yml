@@ -43,7 +43,8 @@ jobs:
            
       - name: Hexo Clean and Generate
         run: |
-          ls -l  /home/runner/work/hexosource/hexosource/static_dir
+          ls -l  /home/runner/work/hexosource/hexosource/static_dir && \
+          ls -l /home/runner/work/hexosource/hexosource/ && \
           exit 1
            
 
