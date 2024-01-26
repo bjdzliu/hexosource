@@ -60,6 +60,6 @@ jobs:
           git config --global user.email "dezhaoliu@gmail.com"
           git config --global user.name "bjdzliu"
           git add .
-          git commit -m "Update Hexo content" 
+          git commit -m "Update Hexo content " 
           git push https://bjdzliu:${{ secrets.ACCESSTOKEN }}@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
 
