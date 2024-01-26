@@ -1,5 +1,4 @@
 name: Publish Hexo Source
-permissions: write-all
 
 on:
   push:
@@ -58,5 +57,5 @@ jobs:
           git config --global user.name "bjdzliu"
           git add .
           git commit -m "Update Hexo content " 
-          git push https://bjdzliu:${{ secrets.PAT_TOKEN }}@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
 
