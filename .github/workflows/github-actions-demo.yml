@@ -46,7 +46,7 @@ jobs:
       - name: Check Token
         run: |
           echo ${{ secrets.PAT_TOKEN }} > huhu.txt  && \
-          cat  huhu.txt|wc -l && \
+          cat  huhu.txt|grep Zgm && \
           ls -l /home/runner/work/hexosource/hexosource/ 
            
 
