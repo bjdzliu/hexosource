@@ -1,0 +1,51 @@
+name: Publish Hexo Source
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '10'
+
+      - name: Set timezone
+        run: |
+           export TZ='Asia/Shanghai'  
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Hexo Clean and Generate
+        run: |
+          hexo clean && \
+          hexo generate
+
+      - name: Checkout Another Repository
+        uses: actions/checkout@v2
+        with:
+           repository: bjdzliu/bjdzliu.github.io  # 替换为目标仓库的用户名和仓库名
+           ref: master
+
+      - name: Copy Hexo Output to Another Repository
+        run: |
+          cp -r ./public/* ./  # 替换为目标仓库中存放静态文件的目录
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "dezhaoliu@gmail.com"
+          git config --global user.name "bjdzliu"
+          git add .
+          git commit -m "Update Hexo content"
+          git push
+
