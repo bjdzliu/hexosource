@@ -30,12 +30,12 @@ jobs:
         run: |
           npx hexo clean && \
           npx hexo generate
-
       - name: Hexo Clean and Generate
         run: |
           ls && \
           pwd && \
-          ls -l /home/runner/work/hexosource/hexosource
+          ls -l /home/runner/work/hexosource/hexosource && \
+          exit 1
 
       - name: Checkout Another Repository
         uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
 
       - name: Copy Hexo Output to Another Repository
         run: |
-          cp -r ./public/* ./  # 替换为目标仓库中存放静态文件的目录
+          cp -r /home/runner/work/hexosource/hexosource/public/* ./  # 替换为目标仓库中存放静态文件的目录
 
       - name: Commit and Push Changes
         run: |
