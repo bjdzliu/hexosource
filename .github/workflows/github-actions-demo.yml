@@ -63,5 +63,5 @@ jobs:
           git config --global user.name "bjdzliu"
           git add .
           git commit -m "Update Hexo content " 
-          git push https://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@github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
+          git push https://github.com/bjdzliu/bjdzliu.github.io.git HEAD:master
 
