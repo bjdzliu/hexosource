@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
+          npm install hexo-neat
 
       - name: Hexo Clean and Generate
         run: |
