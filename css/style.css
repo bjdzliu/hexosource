@@ -535,7 +535,7 @@ code {
   -moz-transition: 0.2s ease-in;
   -ms-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
-  font: 16px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  font: 16px 'Roboto', 'Noto Sans CJK SC', sans-serif;
   color: rgba(255,255,255,0.7);
 }
 .search-form-input:focus,
@@ -1314,7 +1314,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  font: 14px 'Roboto', 'Noto Sans CJK SC', sans-serif;
   padding: 0 15px;
   color: #555;
   outline: none;
