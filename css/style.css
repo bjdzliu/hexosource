@@ -1201,7 +1201,8 @@ a.article-title:hover {
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  /* font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif; */
+  font-family: 'Roboto', 'Noto Sans CJK SC', sans-serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
