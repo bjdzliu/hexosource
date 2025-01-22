@@ -231,8 +231,8 @@ body,
 body {
   background: #eaeaea;
   /* font: 14px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif; */
-  font-family: 'Roboto', 'Noto Sans CJK SC', sans-serif;
-  
+  font: 14px 'Roboto', 'Noto Sans CJK SC', sans-serif;
+  /* font-family: 'Roboto', 'Noto Sans CJK SC', sans-serif; */
   -webkit-text-size-adjust: 100%;
 }
 code {
