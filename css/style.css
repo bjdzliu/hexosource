@@ -247,7 +247,7 @@ code {
   padding: 0 20px;
 }
 .container-inner {
-  max-width: 1120px;
+  max-width: 1200px;
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
@@ -294,7 +294,7 @@ code {
   box-sizing: border-box;
   -webkit-box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
   box-shadow: rgba(0,0,0,0.098) 0px 1px 1px 0px;
-  padding-left: 340px;
+  padding-left: 240px;
   background: url("images/s-left.png") repeat-y left 0;
 }
 .main-body-inner:before,
