@@ -28,6 +28,7 @@ jobs:
           npm uninstall hexo-renderer-marked
           npm install hexo-renderer-pandoc --save
           npm install hexo-filter-mathjax
+          npm install hexo-math --save
 
       - name: Hexo Clean and Generate
         run: |
