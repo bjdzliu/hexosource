@@ -99,13 +99,13 @@ $$
 - $D_{\text{pred}}$：待测试的 Agent Response 中的任务描述。 
 - $\text{EM}(T_{\text{gt}}, T_{\text{pred}})$ ：精确匹配（Exact Match），结果为 0 或 1。
   
-  $$
-  \text{EM}(T_{\text{gt}}, T_{\text{pred}}) = 
-  \begin{cases} 
-  1 & \text{if } T_{\text{gt}} = T_{\text{pred}} \\
-  0 & \text{otherwise}
-  \end{cases}
-  $$
+$$
+\text{EM}(T_{\text{gt}}, T_{\text{pred}}) = 
+\begin{cases} 
+1 & \text{if } T_{\text{gt}} = T_{\text{pred}} \\
+0 & \text{otherwise}
+\end{cases}
+$$
   
 - $\text{Image}(D_{\text{gt}}, D_{\text{pred}})$：模糊匹配评分，可以使用 ROUGE、BLEU 等文本生成质量评估方法，分值为 0-1。
 - $\lambda$：权重系数，用于平衡工具名称和任务描述在总分中的贡献。
