@@ -24,6 +24,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install hexo-neat
+          npm install hexo-renderer-pandoc
 
       - name: Hexo Clean and Generate
         run: |
