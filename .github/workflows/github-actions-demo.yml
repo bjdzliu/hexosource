@@ -25,8 +25,7 @@ jobs:
         run: |
           sudo apt-get install pandoc
           npm install hexo@6.1.0 
-          npm uninstall hexo-renderer-marked
-          npm install hexo-renderer-pandoc 
+          # npm install hexo-renderer-pandoc 
 
       - name: Hexo Clean and Generate
         run: |
