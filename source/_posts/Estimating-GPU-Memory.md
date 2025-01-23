@@ -19,10 +19,10 @@ refer to [model_memory_anatomy](https://huggingface.co/docs/transformers/model_m
 以 **meta-llama/Llama-2-7b** 为例，用在线工具和本地计算的方式算一算
 
 ### 利用Huggingface tool计算
-[模型内存计算器](https://huggingface.co/spaces/hf-accelerate/model-memory-usage)
-- 基于batchsize=1
-- 结论：工具给出了优化器需要的内存，至少是推理内存x4
-因为用像 Adam 这样的优化器进行训练时，会使用额外的内存来存储模型的 动量（momentum） 和 二阶矩估计（second moment estimate）。这些信息是 Adam 等优化器计算梯度时所需要的，因此会占用额外的内存。
+[模型内存计算器](https://huggingface.co/spaces/hf-accelerate/model-memory-usage)  
+- 基于batchsize=1  
+- 结论：工具给出了优化器需要的内存，至少是推理内存x4  
+因为用像 Adam 这样的优化器进行训练时，会使用额外的内存来存储模型的 动量（momentum） 和 二阶矩估计（second moment estimate）。这些信息是 Adam 等优化器计算梯度时所需要的，因此会占用额外的内存。  
 
 
 | dtype                | Largest Layer or Residual Group | Total Size | Training using Adam (Peak vRAM) |
@@ -42,7 +42,7 @@ Total=24+49+49=122G
 
 
 ### 本地计算
-从两个角度计算：
+从两个角度计算：  
 - 模型占用的内存  
 - 激活内存  
     * 指用于存储每一层的激活值（即中间计算结果）的内存  
