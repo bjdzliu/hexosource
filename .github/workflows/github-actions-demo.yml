@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          apt-get install pandoc
+          sudo apt-get install pandoc
           npm install hexo-neat
           npm uninstall hexo-renderer-marked
           npm install hexo-renderer-pandoc --save
