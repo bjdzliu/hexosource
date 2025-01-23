@@ -24,7 +24,9 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install hexo-neat
+          npm uninstall hexo-renderer-marked
           npm install hexo-renderer-pandoc
+          npm install hexo-filter-mathjax
 
       - name: Hexo Clean and Generate
         run: |
