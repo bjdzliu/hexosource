@@ -15,7 +15,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'
 
       - name: Set timezone
         run: |
@@ -26,8 +26,7 @@ jobs:
           sudo apt-get install pandoc
           npm install hexo-neat
           npm uninstall hexo-renderer-marked
-          npm install hexo-renderer-pandoc --save
-          #123
+          npm install hexo-renderer-pandoc 
 
       - name: Hexo Clean and Generate
         run: |
