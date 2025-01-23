@@ -27,7 +27,7 @@ jobs:
           npm install hexo-neat
           npm uninstall hexo-renderer-marked
           npm install hexo-renderer-pandoc --save
-          npm install hexo-filter-mathjax
+          #123
 
       - name: Hexo Clean and Generate
         run: |
