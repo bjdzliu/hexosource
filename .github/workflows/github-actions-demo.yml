@@ -48,7 +48,7 @@ jobs:
         run: |
           pwd && \
           echo ${{ secrets.ACCESSTOKEN }} && \
-          cp -r /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
+          cp -rf /home/runner/work/hexosource/hexosource/public/* static_dir  # 替换为目标仓库中存放静态文件的目录
         
       - name: Commit and Push Changes
       
